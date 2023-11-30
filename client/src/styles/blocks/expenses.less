@@ -1,0 +1,71 @@
+// main: "../main.less"
+
+.expenses {
+  margin-top: 100px;
+}
+
+.expenses_content {
+  background: #797979;
+  max-width: 70%;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 50px;
+
+  .expenses_content_header {
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    font-size: 16px;
+  }
+  .expenses_content_body {
+    .expenses_content_body_item {
+      display: flex;
+      justify-content: space-between;
+      padding: 15px;
+      background: #d9d9d9;
+      margin-top: 20px;
+      border-radius: 10px;
+
+      .expenses_content_body_item_right {
+        display: flex;
+
+        .expenses_content_body_item_delete {
+          margin-left: 30px;
+          cursor: pointer;
+
+          & img {
+            width: 20px;
+          }
+        }
+      }
+    }
+  }
+  .expenses_content_footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 30px;
+    & button {
+      color: #fff;
+      border: none;
+      background: none;
+      font-weight: bold;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+  }
+}
+
+.purpos_button {
+  & button {
+    background: none;
+    padding: 15px 50px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+}
+
+.delete {
+  width: 25px;
+  cursor: pointer;
+}
