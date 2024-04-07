@@ -6,7 +6,7 @@
   "scripts": {
     "start": "cross-env SERVE=true webpack serve",
     "build": "webpack",
-    "build-prod": "webpack --mode=production",
+    "build-prod": "webpack --mode=development",
     "clean": "rd /s /q dist",
     "prettier": "npx prettier --write .",
     "eslint": "npx eslint src/** "

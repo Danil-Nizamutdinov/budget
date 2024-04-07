@@ -19,10 +19,6 @@ function Purpose() {
   const user = useSelector((state) => state.userReducer.user);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(getPurpose(user.id));
-  }, []);
-
   const handleTogglerModalPurpos = () => {
     setTogglerModalPurpos(!togglerModalPurpos);
   };

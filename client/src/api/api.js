@@ -60,6 +60,42 @@ export const expensesAPI = {
   },
 };
 
+export const incomeAPI = {
+  async creatIncome(userId, name, price) {
+    try {
+      const res = await instans.post("income", { userId, name, price });
+      return res.data;
+    } catch (error) {
+      console.log(error);
+    }
+  },
+  async getIncome(userId) {
+    try {
+      const res = await instans.get("income", {
+        params: {
+          userId,
+        },
+      });
+      return res.data;
+    } catch (error) {
+      console.log(error);
+    }
+  },
+  async deleteIncome(userId, id) {
+    try {
+      const res = await instans.delete("income", {
+        params: {
+          userId,
+          incomeId: id,
+        },
+      });
+      return res;
+    } catch (error) {
+      console.log(error);
+    }
+  },
+};
+
 export const purposeAPI = {
   async creatPurpose(userId, name, price) {
     try {

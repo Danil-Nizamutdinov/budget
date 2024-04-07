@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import close from "../../assets/close.svg";
-import ModalExpenses from "./ModalExpenses";
+import ModalIncome from "./ModalIncome";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteExpenses, getExpenses } from "../../redux/expenses-reducer";
+import { deleteIncome, getIncome } from "../../redux/income-reducer";
 
 function Expenses() {
   const [toggler, setToggler] = useState(false);
 
-  const expenses = useSelector((state) => state.expensesReducer.expenses);
+  const income = useSelector((state) => state.incomeReducer.income);
   const user = useSelector((state) => state.userReducer.user);
 
   const dispatch = useDispatch();
@@ -17,18 +17,18 @@ function Expenses() {
   };
 
   const handleDelete = (id) => {
-    dispatch(deleteExpenses(user.id, id));
+    dispatch(deleteIncome(user.id, id));
   };
 
   return (
     <section className="expenses">
       <div className="expenses_content">
         <div className="expenses_content_header">
-          <h2>Общие затраты</h2>
+          <h2>Общие доходы</h2>
         </div>
         <div className="expenses_content_body">
-          {expenses.length > 0 ? (
-            expenses.map((e) => (
+          {income.length > 0 ? (
+            income.map((e) => (
               <div className="expenses_content_body_item" key={e.id}>
                 <div>{e.name}</div>
                 <div className="expenses_content_body_item_right">
@@ -50,7 +50,7 @@ function Expenses() {
           <button onClick={handleToggler}>добавить</button>
         </div>
       </div>
-      {toggler ? <ModalExpenses handleToggler={handleToggler} /> : ""}
+      {toggler ? <ModalIncome handleToggler={handleToggler} /> : ""}
     </section>
   );
 }
